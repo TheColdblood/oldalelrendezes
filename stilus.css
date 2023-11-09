@@ -1,0 +1,131 @@
+/* Felépítés */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D);
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+        "h h h h h"
+        "n n n n n"
+        "b a a a j"
+        "f f f f f"
+}
+
+header{ 
+    grid-area: h;
+}
+
+nav {
+    grid-area: n;
+}
+
+aside#bal {
+    grid-area: b;
+}
+
+aside#jobb {
+    grid-area: j;
+}
+
+article {
+    grid-area: a;
+}
+
+footer {
+    grid-area: f;
+}
+
+header, nav, aside, article, footer {
+    border: solid white 1pt;
+    padding: 10px;
+}
+
+footer, header, h2 {
+    text-align: center;
+}
+
+/* Menü */
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    text-align: center;
+    gap: 10px;
+}
+
+nav li{
+    background-color: teal;
+}
+
+nav a {
+    text-decoration: none;
+    color: yellow;
+    font-weight: bold;
+}
+
+/* Képek */
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: double white 1pt;
+}
+
+.kepek {
+    border: solid white 1pt;
+    padding: 5px;
+}
+
+img {
+    width: 200px;
+}
+
+/* Telefon/Tablet nézet */
+@media only screen and (max-width: 700px) {
+    body {
+      width: 100%;
+    }
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "h h"
+            "n n"
+            "b j"
+            "a a"
+            "f f";
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+      width: 100%;
+    }
+    main {
+        font-size: 12px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "n"
+            "a"
+            "b"
+            "j"
+            "f";
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style: none;
+        text-align: center;
+    }
+}
